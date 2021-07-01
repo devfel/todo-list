@@ -29,13 +29,15 @@ app.post("/users", (request, response) => {
     return response.status(400).json({ error: "Username already registered!" });
   }
 
-  users.push({
+  const user = {
     id: uuidv4(),
     name,
     username,
     todos: [],
-  });
-  return response.send();
+  };
+
+  users.push(user);
+  return response.status(201).json(user);
 });
 
 app.get("/users", (request, response) => {
@@ -64,7 +66,11 @@ app.post("/todos", checksExistsUserAccount, (request, response) => {
 });
 
 app.put("/todos/:id", checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+  const { username } = request.headers;
+  const { title, deadline } = request.body;
+  const { id } = request.params;
+
+  console.log(id);
 });
 
 app.patch("/todos/:id/done", checksExistsUserAccount, (request, response) => {
