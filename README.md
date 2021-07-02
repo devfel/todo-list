@@ -25,6 +25,7 @@ This project was done using Javascript, Node and Express</p>
 - [Application Features](#features)
 - [Dependencies](#dependencies)
 - [Built Using](#built_using)
+- [Getting Started](#getting_started)
 - [Acknowledgements](#acknowledgements)
 - [Licenses](#licenses)
 - [Authors](#authors)
@@ -62,6 +63,26 @@ Some project library dependencies includes but are not limited to:
 - [Express](https://expressjs.com/) - Server Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
 - [Insomnia](https://insomnia.rest/) - Rest Client
+
+---
+
+## 🏁 Getting Started <a name = "getting_started"></a>
+
+You can clone the repository through Command Prompt or Terminal just by typing:
+
+```sh
+git clone https://github.com/devfel/todo-list.git
+```
+
+or download the zip from the green **"Code"** button.
+
+Install dependencies packages with <b>yarn</b>
+
+```sh
+yarn
+```
+
+With the dependencies installed run <b>yarn dev</b> to bring up the server. To execute the tests run <b>yarn test</b>.
 
 ---
 
