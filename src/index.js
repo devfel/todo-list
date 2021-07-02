@@ -90,12 +90,25 @@ app.put("/todos/:id", checksExistsUserAccount, (request, response) => {
 
 //ROUTE - UPDATE "STATUS" FROM A SPECIFIC TO-DO
 app.patch("/todos/:id/done", checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+  const { user } = request;
+  const { id } = request.params;
+
+  let todo = user.todos.find((el) => el.id === id);
+
+  if (!todo) {
+    return response.status(404).json({ error: "To-do not found!" });
+  }
+
+  //Toggle boolean
+  todo.done = !todo.done;
+  //todo.done = true;
+
+  return response.json(todo);
 });
 
 //ROUTE - DELETE A SPECIFIC TO-DO
 app.delete("/todos/:id", checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+  //complete aqui
 });
 
 module.exports = app;
